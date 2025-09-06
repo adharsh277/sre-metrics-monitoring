@@ -1,0 +1,11 @@
+groups:
+- name: sre-app.rules
+  rules:
+  - alert: HighErrorRate
+    expr: rate(http_requests_total{status=~"5.."}[5m]) 
+          / rate(http_requests_total[5m]) > 0.05
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      description: "High error rate (>5%) detected in sre-app"
