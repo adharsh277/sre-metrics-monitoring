@@ -39,6 +39,12 @@ The system collects, exposes, and visualizes metrics like **latency**, **availab
 
 ---
 
+## Screenshots
+![Grafana Dashboard](assets/grafana.png)
+![Grafana Dashboard](assets/grafana1.png)
+
+
+
 ## ⚡ Getting Started
 
 ### Prerequisites
@@ -77,9 +83,6 @@ Runs tests
 Deploys container
 
 Workflow file: .github/workflows/ci-cd.yml
-## Screenshots
-![Grafana Dashboard](assets/grafana.png)
-![Grafana Dashboard](assets/grafana1.png)
 
 
 
