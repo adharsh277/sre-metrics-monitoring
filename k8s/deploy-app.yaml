@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: sre-app
-        image: your-dockerhub-username/sre-app:latest
+        image: aadhi160/sre-app:latest
         ports:
         - containerPort: 5000
 ---
