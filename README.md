@@ -1,101 +1,91 @@
-# 🖥️ SRE Metrics Monitoring Dashboard
+# 📊 SRE Real-Time Monitoring System using Docker, Prometheus, Grafana & GitHub Actions
 
-A simple **Site Reliability Engineering (SRE)** metrics monitoring project using **Prometheus** and **Grafana**.  
-This project collects metrics (like availability % and latency) and visualizes them in dashboards.
+![Docker](https://img.shields.io/badge/Docker-Containerization-blue?logo=docker)
+![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-orange?logo=prometheus)
+![Grafana](https://img.shields.io/badge/Grafana-Visualization-yellow?logo=grafana)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI/CD-green?logo=githubactions)
+![Python](https://img.shields.io/badge/Python-Flask-app-blue?logo=python)
+![DevOps](https://img.shields.io/badge/DevOps-Practices-informational?logo=dev.to)
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Project Overview
+
+This project demonstrates a **SRE-focused monitoring system** that simulates real-time infrastructure metrics using **Prometheus** and **Grafana**, containerized via **Docker**, and deployed automatically using **GitHub Actions CI/CD**.  
+
+The system collects, exposes, and visualizes metrics like **latency**, **availability**, and **error rates**, showcasing best practices in SRE for monitoring, alerting, and observability.
+
+---
+
+## 🛠️ Tools & Technologies
 
 | Tool | Purpose | Link |
 |------|---------|------|
-| Python | CSV Exporter for Prometheus | [Python](https://www.python.org/) |
-| Prometheus | Metrics collection & storage | [Prometheus](https://prometheus.io/) |
-| Grafana | Dashboard & visualization | [Grafana](https://grafana.com/) |
-| Docker | Optional containerization | [Docker](https://www.docker.com/) |
-| GitHub Actions | CI/CD pipeline | [GitHub Actions](https://github.com/features/actions) |
+| Docker | Containerization & deployment | [Docker](https://www.docker.com/) |
+| Prometheus | Metrics collection & SLI/SLO monitoring | [Prometheus](https://prometheus.io/) |
+| Grafana | Dashboard visualization | [Grafana](https://grafana.com/) |
+| GitHub Actions | CI/CD automation | [GitHub Actions](https://github.com/features/actions) |
+| Python & Flask | Backend metrics API | [Flask](https://flask.palletsprojects.com/) |
 
 ---
 
-## 📂 Project Structure
+## 🚀 Features
 
-sre-metrics-monitoring/
-├── exporter.py # Python app exposing metrics
-├── Dockerfile # Optional Docker setup
-├── requirements.txt # Python dependencies
-├── dashboards/ # Grafana dashboard JSON files
-├── .github/workflows/ # GitHub Actions CI/CD workflow
-└── README.md # Project documentation
-
+- **Custom Python exporter** to expose metrics from CSV or real-time sources.
+- **Prometheus monitoring** with SLI/SLO error tracking.
+- **Grafana dashboards** for latency, availability %, and system health.
+- **Automated CI/CD pipeline** using GitHub Actions.
+- **Dockerized deployment** for reproducible infrastructure.
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Getting Started
 
-### 1️⃣ Clone the repo
+### Prerequisites
+
+- [Docker](https://www.docker.com/get-started)
+- [Python 3.x](https://www.python.org/downloads/)
+- [Git](https://git-scm.com/)
+
+### Run Locally
 
 
-git clone https://github.com/
-<username>/sre-metrics-monitoring.git
+# Clone the repository
+git clone <your-repo-link>
 cd sre-metrics-monitoring
 
+# Build Docker image
+docker build -t sre-monitoring .
 
-### 2️⃣ Install dependencies
+# Run Docker container
+docker run -p 5000:5000 sre-monitoring
+Start Prometheus & Grafana
+# Start Prometheus
+docker-compose -f prometheus-docker-compose.yml up -d
 
+# Start Grafana
+docker-compose -f grafana-docker-compose.yml up -d
 
-pip install -r requirements.txt
+📈 CI/CD
 
+Every push to main triggers GitHub Actions workflow:
 
-### 3️⃣ Run the exporter
+Builds Docker image
 
+Runs tests
 
-python exporter.py
+Deploys container
 
-Metrics available at: `http://localhost:8000/metrics`
+Workflow file: .github/workflows/ci-cd.yml
 
-### 4️⃣ Start Prometheus & Grafana
-- Configure Prometheus to scrape metrics from `exporter.py`
-- Import Grafana dashboards from `dashboards/`
+📊 Dashboard
 
----
+Grafana dashboard shows:
 
-## 📊 CI/CD Workflow
+Latency over time
 
-- GitHub Actions automatically tests, builds, and deploys the Python exporter.
-- Workflow file: `.github/workflows/main.yml`
+System availability %
 
----
+Error rates
 
-## 📈 Example Dashboard
-
-- Service Availability %
-- Latency (ms)
-- Error Rates
-- Historical Trends
-
-*(Import dashboard JSON from `dashboards/` folder)*
-
----
-
-## ⚡ Contribution
-
-
-
-Fork the repository
-
-git checkout -b feature/my-feature
-
-git commit -m "Add feature"
-
-git push origin feature/my-feature
-
-Open a Pull Request
-
-
----
-
-## 📄 License
-
-
-
-MIT License
+Grafana Documentation
