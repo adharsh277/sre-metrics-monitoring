@@ -78,6 +78,15 @@ Deploys container
 
 Workflow file: .github/workflows/ci-cd.yml
 
+## 📊 Screenshots
+
+### Grafana Dashboard Example 1
+![Grafana Dashboard](grafana.png)
+
+### Grafana Dashboard Example 2
+![Grafana Dashboard](grafana1.png)
+
+
 📊 Dashboard
 
 Grafana dashboard shows:
